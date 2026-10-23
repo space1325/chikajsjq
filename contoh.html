@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Demo Modul 6: Javascript & jQuery</title>
+    <!-- Pemanggilan jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+      // 1. Variabel, Array, dan Object (Dijalankan di Console)
+      var nama = "Praktikan";
+      var dataArray = ["Satu", 2, true];
+      var objekMobil = {
+        nama: "Mobil",
+        jumlahBan: 4,
+      };
+
+      // 2. Function & Pengendalian Struktur
+      function hitung(a, b) {
+        return a + b;
+      }
+
+      // 3. jQuery: Document Ready & Event Handling
+      $(document).ready(function () {
+        // Cek kondisi sederhana
+        if (nama === "Praktikan") {
+          console.log("Data Array awal: " + dataArray);
+          console.log("Hasil fungsi hitung: " + hitung(5, 5));
+        }
+
+        // jQuery: Efek Hide/Show
+        $("#hide").click(function () {
+          $("p").hide();
+        });
+        $("#show").click(function () {
+          $("p").show();
+        });
+
+        // jQuery: Efek Animasi
+        $("#animasiBtn").click(function () {
+          $("div.kotak-animasi").animate({
+            height: "toggle",
+          });
+        });
+      });
+    </script>
+    <style>
+      .kotak-animasi {
+        background: #98bf21;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Demo Javascript dan jQuery</h2>
+    <p>Jika Anda menekan tombol "Hide", teks ini akan menghilang.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <br /><br />
+
+    <button id="animasiBtn">Start Animation</button>
+    <div class="kotak-animasi"></div>
+  </body>
+</html>
